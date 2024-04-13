@@ -230,3 +230,7 @@ table.rounded-table td{
     border-radius: 5px;
     border-collapse: collapse;
 }
+
+p.justify {
+    text-align: justify;
+}
