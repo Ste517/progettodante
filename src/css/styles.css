@@ -234,3 +234,7 @@ table.rounded-table td{
 p.justify {
     text-align: justify;
 }
+
+span.underline {
+    text-decoration: underline;
+}
