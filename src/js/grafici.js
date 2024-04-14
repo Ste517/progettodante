@@ -3,6 +3,8 @@ var r = document.querySelector(':root');
 google.charts.load('current', { packages: ['corechart', 'bar'] });
 google.charts.setOnLoadCallback(grafico1);
 google.charts.setOnLoadCallback(grafico2);
+google.charts.setOnLoadCallback(grafico4);
+google.charts.setOnLoadCallback(grafico3);
 
 function grafico1() {
     var data = google.visualization.arrayToDataTable([
@@ -62,7 +64,68 @@ function grafico2() {
             title: 'Occorrenze'
         },
     };
-
+    
     var grafico2 = new google.visualization.ColumnChart(document.getElementById('grafico2'));
     grafico2.draw(data, options);
+}
+
+function grafico3() {
+    var data = google.visualization.arrayToDataTable([
+        ['Parola', 'Occorrenze', { role: 'style' }],
+        ['Disdegno/a', 11, r.style.getPropertyValue('--8')],
+        ['Disdegnoso/a', 5, r.style.getPropertyValue('--8')],
+        ['Sdegna', 2, r.style.getPropertyValue('--8')],
+        ['Sdegnoso/a', 2, r.style.getPropertyValue('--8')],
+    ]);
+
+    var options = {
+        title: 'Occorrenze delle parole della pietà',
+        annotations: {
+            alwaysOutside: true,
+            textStyle: {
+                fontSize: 14,
+                color: r.style.getPropertyValue('--10'),
+                auraColor: 'none',
+            }
+        },
+        width: '80%',
+        height: '80%',
+        legend: { position: "none" },
+        vAxis: {
+            title: 'Occorrenze'
+        },
+    };
+
+    var grafico3 = new google.visualization.ColumnChart(document.getElementById('grafico3'));
+    grafico3.draw(data, options);
+}
+
+function grafico4() {
+    var data = google.visualization.arrayToDataTable([
+        ['Cantiche', 'Occorrenze', { role: 'style' }],
+        ['Inferno', 12, r.style.getPropertyValue('--8')],
+        ['Purgatorio', 4, r.style.getPropertyValue('--8')],
+        ['Paradiso', 4, r.style.getPropertyValue('--8')],
+    ]);
+
+    var options = {
+        title: 'Occorrenze delle parole dello sdegno',
+        annotations: {
+            alwaysOutside: true,
+            textStyle: {
+                fontSize: 14,
+                color: r.style.getPropertyValue('--10'),
+                auraColor: 'none',
+            }
+        },
+        width: '80%',
+        height: '80%',
+        legend: { position: "none" },
+        vAxis: {
+            title: 'Occorrenze'
+        },
+    };
+
+    var grafico4 = new google.visualization.ColumnChart(document.getElementById('grafico4'));
+    grafico4.draw(data, options);
 }
