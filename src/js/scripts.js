@@ -75,11 +75,6 @@ function darkTheme() {
     r.style.setProperty('--10', '#ffffffff');
 }
 
-// make the function rickroll
-function rickroll() {
-    window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-}
-
 function closeCookies() {
     document.getElementsByClassName('cookieadvise').item(0).style.display = 'none';
     setCookie("cookie", "true", 7)
